@@ -1,0 +1,18 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+
+            <div id="test">
+                    加载中......
+            </div>
+
+    </body>
+    <script src="/common/require.js"></script>
+    <script>
+        require(['/common/jquery.js'],function(){       
+            $("#test").load('./index.html');
+        });
+    </script>
+</html>

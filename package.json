@@ -1,0 +1,16 @@
+{
+  "name": "pagelet",
+  "version": "1.0.0",
+  "description": "page based component design",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "hulian",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^1.30.0",
+    "express": "^4.16.3",
+    "svg-captcha": "^1.3.11"
+  }
+}

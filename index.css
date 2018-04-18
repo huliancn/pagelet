@@ -1,0 +1,15 @@
+body {
+    padding:0;
+    margin: auto;
+    min-width:1000px;
+}
+
+#div1-1{
+    width:20%;
+}
+#div1-2{
+    width:80%;
+}
+#login{
+    float: left;
+}
