@@ -3,8 +3,11 @@ var app = express();
 
 app.use(express.static("./",{maxAge: 3600000}));
 
+var bodyParser= require("body-parser"); 
+app.use(bodyParser.urlencoded({ extended: false })); 
 
-require('./pagelet-login/server/controller.js')(app);
+
+require('./components/pagelet-login/server/controller.js')(app);
 
 // var admin = express(); // the sub app
 
