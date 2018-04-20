@@ -9,7 +9,7 @@ module.exports=function(app){
     app.post(config.path.login,function(req,res){
 
         //验证参数
-        console.log(req.body.username);
+        //console.log(req.body.username);
 
         //验证密码
 
@@ -32,7 +32,7 @@ module.exports=function(app){
         var data = captcha.create();
 
         //保存验证码
-        console.log('captcha:'+data.text);
+        //console.log('captcha:'+data.text);
 
         //返回SVG格式验证码图片
         res.type('svg')

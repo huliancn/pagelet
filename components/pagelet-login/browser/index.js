@@ -1,5 +1,5 @@
 //定义AMD模块
-define(['/common/jquery.js','../config.js'],function($,config){
+define(['jquery','../config.js'],function($,config){
 
     //初始化函数
     function init(){
