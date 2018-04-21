@@ -1,0 +1,27 @@
+{
+  "name": "pagelet",
+  "version": "1.0.0",
+  "description": "建立前后端一体的，基于组件的开发模型",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hulian/pagelet-core.git"
+  },
+  "keywords": [
+    "Node",
+    "组件"
+  ],
+  "author": "henry hu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hulian/pagelet-core/issues"
+  },
+  "homepage": "https://github.com/hulian/pagelet-core#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "log4js": "^2.5.3"
+  }
+}
