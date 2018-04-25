@@ -1,6 +1,6 @@
 require.config({
     paths: {
-        jquery    : "/common/jquery-3.3.1.min",
+        jquery    : "/common/js/jquery-3.3.1.min",
     },
     shim : {
 
