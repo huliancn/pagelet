@@ -4,15 +4,10 @@
     </head>
     <body>
 
-            <div id="test">
+            <div component="pagelet-login">
                     加载中......
             </div>
 
     </body>
-    <script src="/common/require.js"></script>
-    <script>
-        require(['/common/jquery.js'],function(){       
-            $("#test").load('./index.html');
-        });
-    </script>
+    <script data-main='/common/component-loader.js' src="/common/require.js"></script>
 </html>

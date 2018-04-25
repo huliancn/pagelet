@@ -1,14 +1,14 @@
 <style>    
-    #pagelet-login{width: 300px;height:350px;border:black 1px;}
+    #pagelet-login{width: 300px;height:350px;border:black 1px;font-size:14px;}
     #pagelet-login div{margin:0 auto;padding: 10px 0 0 0;}
     #pagelet-login a{ display: inherit; ;float: left;}
     #pagelet-login img{ display: inherit;float: left;height: 40px;}
-    #pagelet-login .header{width:100%;height:40px;background-color: rgb(212, 233, 212)}
-    #pagelet-login .footer{width:100%;height:40px;background-color: rgb(212, 233, 212)}
+    #pagelet-login .header{width:100%;height:40px;background: #f0f6ff;font-size:16px;}
+    #pagelet-login .footer{width:100%;height:40px;background: #f0f6ff;}
     #pagelet-login .value{width:250px;height: 40px;}
     #pagelet-login .info{width: 250px;height: 10px;line-height: 10px;color: red}    
     #pagelet-login input{width: 100%;height: 40px;}
-    #pagelet-login .button{background-color:rgb(79, 202, 110)}
+    #pagelet-login .forget-password{color:#2e82ff;font-size: 12px}
 </style>
 <div id="pagelet-login">
     <div class="header">用户名密码登陆</div>
@@ -18,7 +18,7 @@
     <div class="value"><input id="pagelet-login-captcha" type="text" placeholder="请输入下面的验证码"></div>
     <div  class="value"><a id="pagelet-login-captcha-refresh" href="javascript:void(0)">刷新:</a><img id="pagelet-login-captcha-img" src="/pagelet-login/captcha"></div>
     <div class="value"><input id="pagelet-login-submit" class="button" type="button" value="确定"/></div>
-    <a class="forget-password" href="javascript:void(0)">忘记密码</a>
+    <div class="value"><a class="forget-password" href="javascript:void(0)">忘记密码</a></div>
     <div class="footer"></div>
 </div>
 <script>
