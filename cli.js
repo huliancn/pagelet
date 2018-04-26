@@ -41,9 +41,16 @@ switch(args[0]){
             fsextra.copySync(dir,dist,{recursive:true},function(err){
                 console.log(err)
             });
-            child_process.fork();
-            require('./server.js');
+            var config = fsextra.readFileSync(dist+'/config.js');
+            console.log(config.toString())
+            var content = config.toString().replace('{component_name}',"'"+args[1]+"'")
+            fsextra.writeFileSync(dist+'/config.js',content);
         }
+
+        child_process.execSync('node '+__dirname+'/server.js',function(error,stdout ,stderr ){
+            console.log(stdout);
+        })
+
     break;
 
     case 'install':
