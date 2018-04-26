@@ -1,21 +1,30 @@
+var express = require('express');
+var klaw = require('klaw-sync');
+var path = require('path');
+
 //创建APP
-var express = require("express");
 var app = express();
 
 //全局变量
-global.rootPath=__dirname;
+global.rootPath = __dirname;
 
 //设置浏览器缓存时间
-app.use(express.static("./",{maxAge: 3600000}));
+app.use(express.static("./", { maxAge: 3600000 }));
 
 //解析POST数据
-var bodyParser= require("body-parser"); 
-app.use(bodyParser.urlencoded({ extended: false })); 
+var bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: false }));
 
 //扫描加载控制器
-require('./components/pagelet-login/server/controller.js')(app);
+const nameFilter = item => item.path.indexOf('controller.js') > 0
+const controllers = klaw(__dirname + '/components', { filter: nameFilter });
+controllers.forEach(controller => {
+    console.log('load controller:' + path.relative(__dirname,controller.path));
+    require( './'+path.relative(__dirname,controller.path))(app);
+});
+
 
 //监听端口，启动服务
-app.listen(8080,function(){
+app.listen(8080, function () {
     console.log("server started!");
 });
