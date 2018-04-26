@@ -47,9 +47,5 @@ define(['jquery', '../../config.js'], function ($, config) {
         alert('功能未实现！');
     });
 
-    //返回AMD模块对象
-    return {
-        init: init
-    }
 
 });
