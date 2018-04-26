@@ -2,7 +2,7 @@
   "name": "pagelet",
   "version": "1.0.0",
   "description": "page based component design",
-  "main": "server.js", 
+  "main": "server.js",
   "scripts": {
     "test": "test"
   },
@@ -12,9 +12,10 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "log4js": "^2.5.3",
+    "mongodb": "^3.0.7",
     "svg-captcha": "^1.3.11"
   },
   "bin": {
-    "pagelet":"./cli.js"
+    "pagelet": "./cli.js"
   }
 }

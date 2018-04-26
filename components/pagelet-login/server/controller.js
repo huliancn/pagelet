@@ -12,6 +12,7 @@ module.exports=function(app){
         //console.log(req.body.username);
 
         //验证密码
+        service.isPasswordValid(req.body);
 
         //创建会话
 

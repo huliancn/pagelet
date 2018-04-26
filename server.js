@@ -2,6 +2,9 @@
 var express = require("express");
 var app = express();
 
+//全局变量
+global.rootPath=__dirname;
+
 //设置浏览器缓存时间
 app.use(express.static("./",{maxAge: 3600000}));
 
