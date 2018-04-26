@@ -42,7 +42,6 @@ switch(args[0]){
                 console.log(err)
             });
             var config = fsextra.readFileSync(dist+'/config.js');
-            console.log(config.toString())
             var content = config.toString().replace('{component_name}',"'"+args[1]+"'")
             fsextra.writeFileSync(dist+'/config.js',content);
         }
