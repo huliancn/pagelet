@@ -4,10 +4,15 @@
     </head>
     <body>
 
-            <div component="pagelet-login">
+            <div id="template" component="template">
                     加载中......
             </div>
 
     </body>
+    <script>
+        var path = location.pathname;
+        var component_name=path.substring(path.indexOf('components/')+11,path.lastIndexOf('/browser'));
+        document.getElementById('template').setAttribute('component',component_name);
+    </script>
     <script data-main='/common/browser/js/component-loader.js' src="/common/browser/js/require.js"></script>
 </html>

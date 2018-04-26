@@ -11,9 +11,8 @@ switch(args[0]){
         switch (args[1]) {
             case 'component':
                 if(args.length>2){
-                    console.log(__dirname+'/components/template'+'--->'+dir);
                     fsextra.ensureDirSync(dir+'/'+args[2]);
-                    fsextra.copySync(__dirname+'/components/template',dir+'/'+args[2],{recursive:true},function(err){
+                    fsextra.copySync(__dirname+'/template/component',dir+'/'+args[2],{recursive:true},function(err){
                         console.log(err)
                     });
                 }else{
@@ -23,6 +22,14 @@ switch(args[0]){
         
             default:
                 break;
+        }
+    break;
+
+    case 'clear':
+        switch(args[1]){
+            case 'components':
+                fsextra.emptyDirSync(__dirname+'/components')
+            break;
         }
     break;
 
