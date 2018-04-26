@@ -9,7 +9,7 @@ var app = express();
 global.rootPath = __dirname;
 
 //设置浏览器缓存时间
-app.use(express.static("./", { maxAge: 3600000 }));
+app.use(express.static(__dirname, { maxAge: 3600000 }));
 
 //解析POST数据
 var bodyParser = require("body-parser");

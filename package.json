@@ -11,6 +11,7 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
+    "fs-extra": "^5.0.0",
     "klaw-sync": "^3.0.2",
     "log4js": "^2.5.3",
     "mongodb": "^3.0.7",
