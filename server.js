@@ -7,6 +7,7 @@ var app = express();
 
 //全局变量
 global.rootPath = __dirname;
+global.common = __dirname+'/common/server';
 
 //设置浏览器缓存时间
 app.use(express.static(__dirname, { maxAge: 3600000 }));
