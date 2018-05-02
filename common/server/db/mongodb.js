@@ -1,11 +1,13 @@
 const config = require('config');
 
-var database;
 if(config.get('profile')==='test'){
    
     //启动内嵌数据库
-    var Engine = require('mongodb');
-    var db = new Engine.Db('test', new Engine.Server('locahost', 27017));
+    //var Engine = require('mongodb');
+    //var server =  new Engine.Server('localhost', 27017);
+    //var db = new Engine.Db('test', server);
+    var Engine = require('tingodb')();
+    var db = new Engine.Db(global.rootPath+'/data/test', {});
     module.exports = {
         db: db
     }
