@@ -1,14 +1,11 @@
 {
-    "profile":"test",
+    "profile":"production",
     "test":{
 
     },
     "production":{
         "db":{
-            "user":{
-                "url":"mongodb://127.0.0.1:27107",
-                "name":"user"
-            }
+            "url":"mongodb://127.0.0.1:27017"    
         }
     }
 }
