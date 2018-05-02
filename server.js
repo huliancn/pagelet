@@ -17,6 +17,14 @@ app.use(express.static(__dirname, { maxAge: 3600000 }));
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 
+//捕捉所有异常,必须放在所有app.use的最后
+app.use(function(err,req,res,next){
+
+    log.server.error(err);
+    res.status(500).send(err)
+
+});
+
 //扫描加载控制器
 const nameFilter = item => item.path.indexOf('controller.js') > 0
 const controllers = klaw(__dirname + '/components', { filter: nameFilter });
