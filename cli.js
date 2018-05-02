@@ -46,9 +46,11 @@ switch(args[0]){
             fsextra.writeFileSync(dist+'/config.js',content);
         }
         
-        child_process.execSync('node server.js',{cwd:__dirname},function(error,stdout ,stderr ){
-            console.log(stdout);
-        })
+        // child_process.execSync('node server.js',{cwd:__dirname},function(error,stdout ,stderr ){
+        //     console.log(stdout);
+        // })
+        process.chdir(__dirname);
+        require('./server.js');
 
     break;
 

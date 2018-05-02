@@ -5,9 +5,11 @@ module.exports=function(){
    log4js.configure(log4jsConfig);
 
    const server = log4js.getLogger('server');
+   const app = log4js.getLogger('app');
 
    return{
-       server:server
+       server:server,
+       app:app
    }
 
 }();
