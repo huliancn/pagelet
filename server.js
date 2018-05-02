@@ -1,13 +1,14 @@
-var express = require('express');
-var klaw = require('klaw-sync');
-var path = require('path');
-
-//创建APP
-var app = express();
-
 //全局变量
 global.rootPath = __dirname;
 global.common = __dirname+'/common/server';
+
+var express = require('express');
+var klaw = require('klaw-sync');
+var path = require('path');
+var log  = require('./common/server/log/log4js.js');
+
+//创建APP
+var app = express();
 
 //设置浏览器缓存时间
 app.use(express.static(__dirname, { maxAge: 3600000 }));
@@ -20,12 +21,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const nameFilter = item => item.path.indexOf('controller.js') > 0
 const controllers = klaw(__dirname + '/components', { filter: nameFilter });
 controllers.forEach(controller => {
-    console.log('load controller:' + path.relative(__dirname,controller.path));
+    log.server.info('load controller:' + path.relative(__dirname,controller.path));
     require( './'+path.relative(__dirname,controller.path))(app);
 });
 
 
 //监听端口，启动服务
 app.listen(8080, function () {
-    console.log("server started!");
+    log.server.info("server started!");
 });

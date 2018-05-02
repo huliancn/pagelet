@@ -45,15 +45,25 @@ switch(args[0]){
             var content = config.toString().replace('{component_name}',"'"+args[1]+"'")
             fsextra.writeFileSync(dist+'/config.js',content);
         }
-
-        child_process.execSync('node '+__dirname+'/server.js',function(error,stdout ,stderr ){
+        
+        child_process.execSync('node server.js',{cwd:__dirname},function(error,stdout ,stderr ){
             console.log(stdout);
         })
 
     break;
 
     case 'install':
-
+        if(args.length>1){
+            const dist = __dirname+'/components/'+args[1];
+            fsextra.ensureDirSync(dist);
+            fsextra.ensureDirSync(dist);
+            fsextra.copySync(dir,dist,{recursive:true},function(err){
+                console.log(err)
+            });
+            var config = fsextra.readFileSync(dist+'/config.js');
+            var content = config.toString().replace('{component_name}',"'"+args[1]+"'")
+            fsextra.writeFileSync(dist+'/config.js',content);
+        }
     break;
 
     default:   

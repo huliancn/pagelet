@@ -1,8 +1,9 @@
 const config = require('config');
 
 var database;
-if(config.get('profile')==='TEST'){
+if(config.get('profile')==='test'){
    
+    //启动内嵌数据库
     var Engine = require('mongodb');
     var db = new Engine.Db('test', new Engine.Server('locahost', 27017));
     module.exports = {
@@ -11,14 +12,12 @@ if(config.get('profile')==='TEST'){
 
 }else{
 
+    //获取驱动
     const MongoClient = require('mongodb').MongoClient;
-
     // Connection URL
-    const url = 'mongodb://localhost:27017';
-
+    const url = config.get('production.user.db.url')
     // Database Name
-    const dbName = 'myproject';
-
+    const dbName = config.get('production.user.db.name');
     // Use connect method to connect to the server
     MongoClient.connect(url, function (err, client) {
 
