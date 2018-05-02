@@ -1,4 +1,4 @@
-node_modules
-components
-logs
+node_modules/
+components/
+logs/
 package-lock.json
