@@ -8,9 +8,6 @@ module.exports=function(){
         if(config.get('profile')==='test'){
    
             //启动内嵌数据库
-            //var Engine = require('mongodb');
-            //var server =  new Engine.Server('localhost', 27017);
-            //var db = new Engine.Db('test', server);
             var Engine = require('tingodb')();
             var db = new Engine.Db(global.rootPath+'/data/test', {});
             callback(err,db);
@@ -35,7 +32,6 @@ module.exports=function(){
         
                 const db = client.db(name);
         
-                console.log(db);
                 if(db===undefined){
                     console.log('打开数据库失败！');
                 }
