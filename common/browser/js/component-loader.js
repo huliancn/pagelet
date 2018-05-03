@@ -1,6 +1,7 @@
 require.config({
     paths: {
         jquery    : "/common/browser/js/jquery-3.3.1.min",
+        validator : "/common/browser/js/validator.min"
     },
     shim : {
 
