@@ -10,7 +10,7 @@ module.exports=function(){
             //启动内嵌数据库
             var Engine = require('tingodb')();
             var db = new Engine.Db(global.rootPath+'/data/test', {});
-            next(err,db);
+            next(null,db);
         
         }else{
         
